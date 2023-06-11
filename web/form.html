@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Профиль Макса</title>
+        <?php if(isset($_SESSION['name'])){echo '<style> form {display: none;} </style>';}?>
+    </head>
+    <div>
+        <?php if(isset($_SESSION['name'])){echo '<a href="exit.php?out=1">Выйти</a>';}?>
+        <h2>Имя: <?php if(isset($_SESSION['name'])){ echo $_SESSION['name'];} else {echo 'ЮЗЕР';} ?></h2>
+        <h2>Регион: Москва</h2>
+    </div>
+    <body>
+        <form enctype="multipart/form-data" method="post" action="post.php">
+		    <p>
+                <input type="text" name="name" placeholder="Ваше имя"/>
+            </p>
+            <p>
+                <input type="submit" value="Отправить" />
+            </p>
+        </form>
+    </body>
+</html>
